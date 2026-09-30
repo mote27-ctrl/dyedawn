@@ -34,26 +34,6 @@ body{
     transition: background 0.4s ease, color 0.4s ease;
     min-height:100vh;
 }
-/* 左上角章鱼按钮 */
-.ctrl-top-left{
-    position:fixed;
-    top:1.2rem;
-    left:1.2rem;
-    z-index:60;
-}
-.btn-octopus{
-    width:42px;height:42px;
-    border:1px solid var(--border);
-    background:var(--bg-card);
-    color:var(--text);
-    border-radius:8px;
-    cursor:pointer;
-    display:grid;
-    place-items:center;
-    transition:border-color 0.25s ease;
-}
-.btn-octopus:hover{border-color:var(--accent);}
-
 /* 右上角设置按钮 */
 .ctrl-top-right{
     position:fixed;
@@ -144,6 +124,24 @@ body{
 }
 .dark .switch{background:#333740;}
 .dark .switch::after{transform:translateX(24px);}
+
+/* 设置内链接按钮 */
+.setting-link{
+    margin-top:1.6rem;
+    display:block;
+    padding:0.8rem 1rem;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:var(--bg-card);
+    color:var(--text);
+    text-decoration:none;
+    text-align:center;
+    transition:border-color 0.25s ease,transform 0.2s ease;
+}
+.setting-link:hover{
+    border-color:var(--accent);
+    transform:translateY(-2px);
+}
 
 /* 首页Hero */
 .hero{
@@ -321,16 +319,6 @@ footer{
 </style>
 </head>
 <body>
-<!-- 左上角章鱼按钮 -->
-<div class="ctrl-top-left">
-    <a class="btn-octopus" href="https://mote27-ctrl.github.io/myfirstweb1" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4z"/>
-            <path d="M12 12v8M8 20c0-2 1-3 4-3s4 1 4 3M7 14c-1.5 1-2 2.5-2 4M17 14c1.5 1 2 2.5 2 4M6 10c-1.5-.5-3 .5-3 2M18 10c1.5-.5 3 .5 3 2"/>
-        </svg>
-    </a>
-</div>
-
 <div class="overlay" id="overlay"></div>
 <div class="ctrl-top-right">
     <button class="btn-setting" id="btnSetting">
@@ -354,6 +342,7 @@ footer{
         <span>明暗模式</span>
         <div class="switch" id="switchTheme"></div>
     </div>
+    <a class="setting-link" href="https://mote27-ctrl.github.io/myfirstweb1" target="_blank">陌音コポ official website</a>
 </div>
 
 <!-- 首页 -->
@@ -380,7 +369,7 @@ footer{
 <main class="container">
     <a class="back-home" id="goHome" href="#">返回首页</a>
     <div class="link-group">
-        <div class="section-label">实用工具</div>
+        <div class="section-label">工程配布</div>
         <a class="btn-block" href="https://vsqx.top" target="_blank">
             <div class="link-name">v站工程分享站</div>
             <div class="link-url">vsqx.top</div>
@@ -389,6 +378,38 @@ footer{
             <div class="link-name">外网工程分享站</div>
             <div class="link-url">https://vocaloader.app/</div>
         </a>
+        <a class="btn-block" href="https://vocalfiles.top/?nocache=1" target="_blank">
+            <div class="link-name">vocalfiles工程站</div>
+            <div class="link-url">https://vocalfiles.top/?nocache=1</div>
+        </a>
+
+        <div class="section-label">世界计划</div>
+        <a class="btn-block" href="http://st.3kn.jp/" target="_blank">
+            <div class="link-name">pjsk表情包制作网址1</div>
+            <div class="link-url">http://st.3kn.jp/</div>
+        </a>
+        <a class="btn-block" href="https://st.nightcord.de5.net/" target="_blank">
+            <div class="link-name">pjsk表情包制作网址2</div>
+            <div class="link-url">https://st.nightcord.de5.net/</div>
+        </a>
+        <a class="btn-block" href="https://8823.resona.cn/costume-preview" target="_blank">
+            <div class="link-name">pjsk角色3d换装</div>
+            <div class="link-url">https://8823.resona.cn/costume-preview</div>
+        </a>
+        <a class="btn-block" href="sekai-stories.pages.dev" target="_blank">
+            <div class="link-name">pjsk剧情制作器</div>
+            <div class="link-url">sekai-stories.pages.dev</div>
+        </a>
+        <a class="btn-block" href="https://pjsk-zh.mid.red/" target="_blank">
+            <div class="link-name">pjsk冲榜车队</div>
+            <div class="link-url">https://pjsk-zh.mid.red/</div>
+        </a>
+        <a class="btn-block" href="https://snowyviewer.exmeaning.com/" target="_blank">
+            <div class="link-name">pjsk资料库</div>
+            <div class="link-url">https://snowyviewer.exmeaning.com/</div>
+        </a>
+
+        <div class="section-label">实用工具</div>
         <a class="btn-block" href="https://ebilibili.com/download" target="_blank">
             <div class="link-name">bilibili视频下载器</div>
             <div class="link-url">ebilibili.com/download</div>
