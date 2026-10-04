@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dyedawn OFFICIAL WEBSITE</title>
 <style>
 :root{
@@ -34,7 +34,6 @@ body{
     transition: background 0.4s ease, color 0.4s ease;
     min-height:100vh;
 }
-/* 右上角设置按钮 */
 .ctrl-top-right{
     position:fixed;
     top:1.2rem;
@@ -53,8 +52,6 @@ body{
     transition:border-color 0.25s ease;
 }
 .btn-setting:hover{border-color:var(--accent);}
-
-/* 设置面板：右侧半页 */
 .panel-setting{
     position:fixed;
     top:0;
@@ -88,7 +85,6 @@ body{
     transition:border-color 0.25s ease;
 }
 .btn-close-panel:hover{border-color:var(--accent);}
-
 .overlay{
     position:fixed;
     inset:0;
@@ -124,8 +120,6 @@ body{
 }
 .dark .switch{background:#333740;}
 .dark .switch::after{transform:translateX(24px);}
-
-/* 设置内链接按钮 */
 .setting-link{
     margin-top:1.6rem;
     display:block;
@@ -142,8 +136,6 @@ body{
     border-color:var(--accent);
     transform:translateY(-2px);
 }
-
-/* 首页Hero */
 .hero{
     min-height:85vh;
     display:flex;
@@ -198,8 +190,6 @@ body{
     text-decoration:none;
     font-size:1.05rem;
 }
-
-/* 容器 */
 .container{
     width:min(720px,92%);
     margin:0 auto;
@@ -212,8 +202,12 @@ body{
 .page.active{
     display:block;
 }
-
-/* 网站分享按钮：比之前大一点，但不过分 */
+.nav-group{
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    flex-wrap:wrap;
+}
 .nav-btn{
     padding:0.95rem 1.8rem;
     font-size:1.05rem;
@@ -228,11 +222,9 @@ body{
     border-color:var(--accent);
     transform:translateY(-2px);
 }
-
-/* 返回首页：左侧纯文字链接，不是按钮 */
 .back-home{
     display:inline-block;
-    margin-bottom:2rem;
+    margin-bottom:2.4rem;
     color:var(--text-muted);
     text-decoration:none;
     font-size:0.95rem;
@@ -244,7 +236,6 @@ body{
     color:var(--text);
     text-decoration:underline;
 }
-
 .link-group{
     margin-top:2rem;
     text-align:left;
@@ -253,36 +244,65 @@ body{
     font-size:0.82rem;
     color:var(--text-muted);
     letter-spacing:0.12em;
-    margin:2rem 0 1rem;
+    margin:2.5rem 0 1.2rem;
     text-align:center;
 }
-.btn-block{
-    display:block;
+.normal-block{
     width:100%;
-    padding:1.1rem 1.4rem;
-    margin-bottom:1rem;
+    padding:1.25rem 1.4rem;
+    margin-bottom:1.25rem;
     border:1px solid var(--border);
-    border-radius:10px;
+    border-radius:12px;
     background:var(--bg-card);
     color:var(--text);
     text-decoration:none;
+    display:block;
     transition:border-color 0.25s ease, transform 0.2s ease;
 }
-.btn-block:hover{
+.normal-block:hover{
     border-color:var(--accent);
     transform:translateY(-2px);
 }
-.btn-block .link-name{
+.normal-block .link-name{
     font-weight:500;
-    margin-bottom:0.4rem;
+    font-size:1.05rem;
+    margin-bottom:0.35rem;
 }
-.btn-block .link-url{
+.normal-block .link-url{
     font-size:0.85rem;
     color:var(--accent);
     word-break:break-all;
 }
-
-/* 右下角top按钮：圆形 */
+.file-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    padding:1.25rem 1.4rem;
+    margin-bottom:1.25rem;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--bg-card);
+    transition:border-color 0.25s ease, transform 0.2s ease;
+}
+.file-row:hover{
+    border-color:var(--accent);
+    transform:translateY(-2px);
+}
+.download-btn{
+    padding:0.45rem 0.9rem;
+    border:1px solid var(--border);
+    border-radius:6px;
+    font-size:0.85rem;
+    cursor:pointer;
+    transition:0.2s;
+    color:var(--text);
+    text-decoration:none;
+}
+.download-btn:hover{
+    background:var(--accent);
+    color:#fff;
+}
 #pageTop{
     position:fixed;
     bottom:24px;
@@ -307,8 +327,6 @@ body{
     pointer-events:auto;
 }
 #pageTop:hover{border-color:var(--accent);}
-
-/* 版权居中 */
 footer{
     width:100%;
     padding-bottom:2rem;
@@ -323,18 +341,17 @@ footer{
 <div class="ctrl-top-right">
     <button class="btn-setting" id="btnSetting">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
         </svg>
     </button>
 </div>
-
 <div class="panel-setting" id="panelSetting">
     <div class="panel-header">
         <h3>设置</h3>
         <button class="btn-close-panel" id="btnClosePanel">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 6l12 12M6 18L18 6"/>
+                <path d="M6 6l12 12M6 18L18 6" />
             </svg>
         </button>
     </div>
@@ -344,8 +361,6 @@ footer{
     </div>
     <a class="setting-link" href="https://mote27-ctrl.github.io/myfirstweb1" target="_blank">陌音コポ official website</a>
 </div>
-
-<!-- 首页 -->
 <div id="homePage" class="page active">
 <header class="hero">
     <h1 class="hero-title">Dyedawn</h1>
@@ -360,96 +375,107 @@ footer{
     </div>
 </header>
 <main class="container">
-    <button class="nav-btn" id="goShare">网站分享</button>
+    <div class="nav-group">
+        <button class="nav-btn" id="goShare">网站分享</button>
+        <button class="nav-btn" id="goFile">文件分享</button>
+    </div>
 </main>
 </div>
-
-<!-- 网站分享页 -->
 <div id="sharePage" class="page">
 <main class="container">
     <a class="back-home" id="goHome" href="#">返回首页</a>
     <div class="link-group">
         <div class="section-label">工程配布</div>
-        <a class="btn-block" href="https://vsqx.top" target="_blank">
+        <a class="normal-block" href="https://vsqx.top" target="_blank">
             <div class="link-name">v站工程分享站</div>
             <div class="link-url">vsqx.top</div>
         </a>
-        <a class="btn-block" href="https://vocaloader.app/" target="_blank">
+        <a class="normal-block" href="https://vocaloader.app/" target="_blank">
             <div class="link-name">外网工程分享站</div>
             <div class="link-url">https://vocaloader.app/</div>
         </a>
-        <a class="btn-block" href="https://vocalfiles.top/?nocache=1" target="_blank">
+        <a class="normal-block" href="https://vocalfiles.top/?nocache=1" target="_blank">
             <div class="link-name">vocalfiles工程站</div>
             <div class="link-url">https://vocalfiles.top/?nocache=1</div>
         </a>
-
         <div class="section-label">世界计划</div>
-        <a class="btn-block" href="http://st.3kn.jp/" target="_blank">
+        <a class="normal-block" href="http://st.3kn.jp/" target="_blank">
             <div class="link-name">pjsk表情包制作网址1</div>
             <div class="link-url">http://st.3kn.jp/</div>
         </a>
-        <a class="btn-block" href="https://st.nightcord.de5.net/" target="_blank">
+        <a class="normal-block" href="https://st.nightcord.de5.net/" target="_blank">
             <div class="link-name">pjsk表情包制作网址2</div>
             <div class="link-url">https://st.nightcord.de5.net/</div>
         </a>
-        <a class="btn-block" href="https://8823.resona.cn/costume-preview" target="_blank">
+        <a class="normal-block" href="https://8823.resona.cn/costume-preview" target="_blank">
             <div class="link-name">pjsk角色3d换装</div>
             <div class="link-url">https://8823.resona.cn/costume-preview</div>
         </a>
-        <a class="btn-block" href="sekai-stories.pages.dev" target="_blank">
+        <a class="normal-block" href="https://sekai-stories.pages.dev" target="_blank">
             <div class="link-name">pjsk剧情制作器</div>
-            <div class="link-url">sekai-stories.pages.dev</div>
+            <div class="link-url">https://sekai-stories.pages.dev</div>
         </a>
-        <a class="btn-block" href="https://pjsk-zh.mid.red/" target="_blank">
+        <a class="normal-block" href="https://pjsk-zh.mid.red/" target="_blank">
             <div class="link-name">pjsk冲榜车队</div>
             <div class="link-url">https://pjsk-zh.mid.red/</div>
         </a>
-        <a class="btn-block" href="https://snowyviewer.exmeaning.com/" target="_blank">
+        <a class="normal-block" href="https://snowyviewer.exmeaning.com/" target="_blank">
             <div class="link-name">pjsk资料库</div>
             <div class="link-url">https://snowyviewer.exmeaning.com/</div>
         </a>
-
         <div class="section-label">实用工具</div>
-        <a class="btn-block" href="https://ebilibili.com/download" target="_blank">
+        <a class="normal-block" href="https://ebilibili.com/download" target="_blank">
             <div class="link-name">bilibili视频下载器</div>
             <div class="link-url">ebilibili.com/download</div>
         </a>
-        <a class="btn-block" href="https://pan.vocaloid.world" target="_blank">
+        <a class="normal-block" href="https://pan.vocaloid.world" target="_blank">
             <div class="link-name">瑟狐下载站（可下VOCALOID声库）</div>
             <div class="link-url">pan.vocaloid.world</div>
         </a>
-        <a class="btn-block" href="https://vocabirth.melodynade.com" target="_blank">
+        <a class="normal-block" href="https://vocabirth.melodynade.com" target="_blank">
             <div class="link-name">查生日当天的术曲</div>
             <div class="link-url">vocabirth.melodynade.com</div>
         </a>
-        <a class="btn-block" href="https://liteui.dcde.club" target="_blank">
+        <a class="normal-block" href="https://liteui.dcde.club" target="_blank">
             <div class="link-name">周榜素材下载器</div>
             <div class="link-url">liteui.dcde.club</div>
         </a>
-        <a class="btn-block" href="https://sdercolin.github.io/utaformatix3/" target="_blank">
+        <a class="normal-block" href="https://sdercolin.github.io/utaformatix3/" target="_blank">
             <div class="link-name">工程转换器</div>
             <div class="link-url">https://sdercolin.github.io/utaformatix3/</div>
         </a>
-        <a class="btn-block" href="https://voca.wiki" target="_blank">
+        <a class="normal-block" href="https://voca.wiki" target="_blank">
             <div class="link-name">vocaloid wiki</div>
             <div class="link-url">voca.wiki</div>
         </a>
-
         <div class="section-label">友情网站</div>
-        <a class="btn-block" href="https://buefatcat.github.io/koneko-dosu-website/" target="_blank">
+        <a class="normal-block" href="https://buefatcat.github.io/koneko-dosu-website/" target="_blank">
             <div class="link-name">肥猫ドス官网</div>
             <div class="link-url">https://buefatcat.github.io/koneko-dosu-website/</div>
         </a>
     </div>
 </main>
 </div>
-
+<div id="filePage" class="page">
+<main class="container">
+    <a class="back-home" id="goHome2" href="#">返回首页</a>
+    <div class="link-group">
+        <div class="section-label">可用文件</div>
+        <div class="file-row">
+            <div class="link-name">Miku svflat AI2声库</div>
+            <a class="download-btn" href="https://github.com/mote27-ctrl/dyedawn/releases/latest/download/flatmikuai2.sfpk" download="flatmikuai2.sfpk">下载</a>
+        </div>
+        <div class="file-row">
+            <div class="link-name">可不SV AI声库</div>
+            <a class="download-btn" href="https://github.com/mote27-ctrl/dyedawn/releases/latest/download/KAFU.AI-installer-v130.sfpk" download="KAFU.AI-installer-v130.sfpk">下载</a>
+        </div>
+    </div>
+</main>
+</div>
 <footer>
     <p>© 2026 Dyedawn All rights reserved.</p>
 </footer>
-
 <div id="pageTop">top</div>
-
 <script>
 const btnSetting = document.getElementById('btnSetting');
 const panelSetting = document.getElementById('panelSetting');
@@ -459,9 +485,11 @@ const switchTheme = document.getElementById('switchTheme');
 const pageTop = document.getElementById('pageTop');
 const homePage = document.getElementById('homePage');
 const sharePage = document.getElementById('sharePage');
+const filePage = document.getElementById('filePage');
 const goShare = document.getElementById('goShare');
+const goFile = document.getElementById('goFile');
 const goHome = document.getElementById('goHome');
-
+const goHome2 = document.getElementById('goHome2');
 function openPanel(){
     panelSetting.classList.add('open');
     overlay.classList.add('show');
@@ -470,18 +498,20 @@ function closePanel(){
     panelSetting.classList.remove('open');
     overlay.classList.remove('show');
 }
-
 btnSetting.onclick = openPanel;
 btnClosePanel.onclick = closePanel;
 overlay.onclick = closePanel;
-
 switchTheme.onclick = ()=>{
     document.documentElement.classList.toggle('dark');
 }
-
 goShare.onclick = ()=>{
     homePage.classList.remove('active');
     sharePage.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+goFile.onclick = ()=>{
+    homePage.classList.remove('active');
+    filePage.classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
 }
 goHome.onclick = (e)=>{
@@ -490,7 +520,12 @@ goHome.onclick = (e)=>{
     homePage.classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
 }
-
+goHome2.onclick = (e)=>{
+    e.preventDefault();
+    filePage.classList.remove('active');
+    homePage.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+}
 window.addEventListener('scroll',()=>{
     if(window.scrollY > 300){
         pageTop.classList.add('show');
